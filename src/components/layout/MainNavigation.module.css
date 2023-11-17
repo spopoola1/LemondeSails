@@ -1,0 +1,55 @@
+/* Add the background image styles to the body */
+body {
+  background-image: url('../../Pages/sample2.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.header {
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #228ea1;
+    padding: 0 10%;
+  }
+  
+  .logo {
+    font-size: 2rem;
+    color: white;
+    font-weight: bold;
+    margin-left: -7rem;
+  }
+  
+  .header ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: baseline;
+  }
+  
+  .header li {
+    margin-left: 3rem;
+  }
+  
+  .header a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #ffffff;
+  }
+  
+  .header a:hover,
+  .header a:active,
+  .header a.active {
+    color: white;
+  }
+  
+  .badge {
+    background-color: #228ea1;
+    color: white;
+    border-radius: 12px;
+    padding: 0 1rem;
+    margin-left: 0.5rem;
+  }

@@ -1,0 +1,44 @@
+/* SimulationDetails.css */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.card {
+  width: 100%;
+  max-width: 600px;
+  margin: 1rem;
+  text-align: left;
+  background-color: #f7f7f7;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  padding: 1rem; /* Added padding on each side of the card */
+}
+
+.shipmentInfo ul li {
+  text-align: Center;
+}
+
+.shipmentList {
+  list-style: none; /* Remove bullet points */
+  padding-left: 1rem; /* Remove left padding */
+}
+
+.divider {
+  height: 1px;
+  background-color: #228ea1; /* Blue horizontal line */
+  margin: 1.5rem; /* Add space above and below the divider */
+}
+
+.shipmentInfo ul li,
+.shipmentUpdates ul li,
+.intermodalDetails ul li {
+  margin-bottom: 1rem; /* Add space between each list item */
+}
+
+.content h3 {
+  padding-left: 0.5rem;
+}
