@@ -1,6 +1,8 @@
+import { useState } from "react";
 import Card from "../UI/Card";
 import classes from './SimulationForm.module.css';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 function NewSimulationForm() {
   const originOptions = [ null, "ABZ: Aberdeen",
@@ -65,9 +67,26 @@ function NewSimulationForm() {
 
   const navigate = useNavigate();
 
+  const [formData, setFormData] = useState({
+    origin: '',
+    destination: '',
+    classOfService: '',
+    deliveryDate: ''
+  })
+
+  const handleInput = (event) => {
+    setFormData({...formData, [event.target.id]: event.target.value})
+  }
+
   const submitHandler = (event) => {
     event.preventDefault();
-
+    console.log(formData)
+    // Post request to backend
+    axios.post('http://127.0.0.1:5000/userInput', {formData}).then(
+      res => console.log(res)
+    ).catch(
+      err => console.log(err)
+    )
     // If validations are successful, navigate to the Simulation Details page
     navigate('/simulation-details');
   };
@@ -78,7 +97,7 @@ function NewSimulationForm() {
       <form className={classes.form} onSubmit={submitHandler}>
         <div className={classes.control}>
           <label htmlFor='origin'>Origin</label>
-          <select id="origin" required>
+          <select id="origin" required onChange={handleInput}>
             {originOptions.map((option, index) => (
               <option key={index} value={option}>
                 {option}
@@ -88,7 +107,7 @@ function NewSimulationForm() {
         </div>
         <div className={classes.control}>
           <label htmlFor='destination'>Destination</label>
-          <select id="destination" required>
+          <select id="destination" required onChange={handleInput}>
             {destinationOptions.map((option, index) => (
               <option key={index} value={option}>
                 {option}
@@ -98,7 +117,7 @@ function NewSimulationForm() {
         </div>
         <div className={classes.control}>
           <label htmlFor='classOfService'>Class Of Service</label>
-          <select id="classOfService" required>
+          <select id="classOfService" required onChange={handleInput}>
             {classOfServiceOptions.map((option, index) => (
               <option key={index} value={option}>
                 {option}
@@ -108,7 +127,7 @@ function NewSimulationForm() {
         </div>
         <div className={classes.control}>
           <label htmlFor='deliveryDate'>Delivery Date</label>
-          <input type='date' required id='deliveryDate' />
+          <input type='date' required id='deliveryDate' onChange={handleInput} />
         </div>
         <div className={classes.actions}>
           <button type='submit'>Start Simulation</button>
