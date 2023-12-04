@@ -1,103 +1,109 @@
-import { useState } from "react";
+import React, { useState } from 'react';
 import Card from "../UI/Card";
 import classes from './SimulationForm.module.css';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import routesData from '../../routesData';
 
 function NewSimulationForm() {
-  const originOptions = [ null, "ABZ: Aberdeen",
-  "ANC: Anchorage",
-  "ATL: Atlanta",
-  "BOM: Mumbai",
-  "BWN: Brownsville",
-  "CCU: Kolkata",
-  "CHS: Charleston",
-  "CLT: Charlotte",
-  "DEL: Delhi",
-  "DFW: Dallas",
-  "EDI: Edinburgh",
-  "HYD: Hyderabad",
-  "IAH: Houston",
-  "ISS: International Space Station",
-  "KUL: Kuala Lumpur",
-  "LAX: Los Angeles",
-  "MEL: Melbourne",
-  "MEX: Mexico City",
-  "MSY: New Orleans",
-  "NSP: McMurdo Station",
-  "ORD: Chicago",
-  "PNY: Pondicherry",
-  "SAN: San Diego",
-  "SCL: Santiago",
-  "SHL: Shimla",
-  "SIN: Singapore",
-  "STL: St Louis",
-  "SYD/: Sydney",
-  "ZAL: Valdivia"];
-  const destinationOptions = [ null, "ABZ: Aberdeen",
-  "ANC: Anchorage",
-  "ATL: Atlanta",
-  "BOM: Mumbai",
-  "BWN: Brownsville",
-  "CCU: Kolkata",
-  "CHS: Charleston",
-  "CLT: Charlotte",
-  "DEL: Delhi",
-  "DFW: Dallas",
-  "EDI: Edinburgh",
-  "HYD: Hyderabad",
-  "IAH: Houston",
-  "ISS: International Space Station",
-  "KUL: Kuala Lumpur",
-  "LAX: Los Angeles",
-  "MEL: Melbourne",
-  "MEX: Mexico City",
-  "MSY: New Orleans",
-  "NSP: McMurdo Station",
-  "ORD: Chicago",
-  "PNY: Pondicherry",
-  "SAN: San Diego",
-  "SCL: Santiago",
-  "SHL: Shimla",
-  "SIN: Singapore",
-  "STL: St Louis",
-  "SYD/: Sydney",
-  "ZAL: Valdivia"];
+  const [selectedOrigin, setSelectedOrigin] = useState('');
+  const [selectedDestination, setSelectedDestination] = useState('');
+  const [selectedClassOfService, setSelectedClassOfService] = useState('');
+
+  const originOptions = [ null, "ABZ",
+  "ANC",
+  "ATL",
+  "BOM",
+  "BWN",
+  "CCU",
+  "CHS",
+  "CLT",
+  "DEL",
+  "DFW",
+  "EDI",
+  "HYD",
+  "IAH",
+  "ISS",
+  "KUL",
+  "LAX",
+  "MEL",
+  "MEX",
+  "MSY",
+  "NSP",
+  "ORD",
+  "PNY",
+  "SAN",
+  "SAT",
+  "SCL",
+  "SEA",
+  "SHL",
+  "SIN",
+  "STL",
+  "SYD",
+  "ZAL"];
+  const destinationOptions = [ null, "ABZ",
+  "ANC",
+  "ATL",
+  "BOM",
+  "BWN",
+  "CCU",
+  "CHS",
+  "CLT",
+  "DEL",
+  "DFW",
+  "EDI",
+  "HYD",
+  "IAH",
+  "ISS",
+  "KUL",
+  "LAX",
+  "MEL",
+  "MEX",
+  "MSY",
+  "NSP",
+  "ORD",
+  "PNY",
+  "SAN",
+  "SAT",
+  "SCL",
+  "SEA",
+  "SHL",
+  "SIN",
+  "STL",
+  "SYD",
+  "ZAL"];
   const classOfServiceOptions = [null, "Standard", "Express", "Premium"];
-
   const navigate = useNavigate();
-
-  const [formData, setFormData] = useState({
-    origin: '',
-    destination: '',
-    classOfService: '',
-    deliveryDate: ''
-  })
-
-  const handleInput = (event) => {
-    setFormData({...formData, [event.target.id]: event.target.value})
-  }
 
   const submitHandler = (event) => {
     event.preventDefault();
-    console.log(formData)
-    // Post request to backend
-    axios.post('http://127.0.0.1:5000/userInput', {formData}).then(
-      res => console.log(res)
-    ).catch(
-      err => console.log(err)
-    )
-    // If validations are successful, navigate to the Simulation Details page
+
+    // Validate user input against the hardcoded routes Data
+    const isValidSelection = routesData.some(route =>
+      route.origin === selectedOrigin &&
+      route.destination === selectedDestination &&
+      route.classOfService === selectedClassOfService
+    );
+
+    if (!isValidSelection) {
+      alert('There are no routes for the selections you have made.');
+      return;
+    }
+
     navigate('/simulation-details');
   };
 
   return (
     <Card>
-      <h1>Create New Simulation</h1>
+      <h1>Input A Shipment</h1>
       <form className={classes.form} onSubmit={submitHandler}>
         <div className={classes.control}>
           <label htmlFor='origin'>Origin</label>
-          <select id="origin" required onChange={handleInput}>
+          <select
+            id="origin"
+            value={selectedOrigin}
+            onChange={(e) => setSelectedOrigin(e.target.value)}
+            required
+          >
             {originOptions.map((option, index) => (
               <option key={index} value={option}>
                 {option}
@@ -107,7 +113,12 @@ function NewSimulationForm() {
         </div>
         <div className={classes.control}>
           <label htmlFor='destination'>Destination</label>
-          <select id="destination" required onChange={handleInput}>
+          <select
+            id="destination"
+            value={selectedDestination}
+            onChange={(e) => setSelectedDestination(e.target.value)}
+            required
+          >
             {destinationOptions.map((option, index) => (
               <option key={index} value={option}>
                 {option}
@@ -117,7 +128,12 @@ function NewSimulationForm() {
         </div>
         <div className={classes.control}>
           <label htmlFor='classOfService'>Class Of Service</label>
-          <select id="classOfService" required onChange={handleInput}>
+          <select
+            id="classOfService"
+            value={selectedClassOfService}
+            onChange={(e) => setSelectedClassOfService(e.target.value)}
+            required
+          >
             {classOfServiceOptions.map((option, index) => (
               <option key={index} value={option}>
                 {option}
@@ -127,7 +143,7 @@ function NewSimulationForm() {
         </div>
         <div className={classes.control}>
           <label htmlFor='deliveryDate'>Delivery Date</label>
-          <input type='date' required id='deliveryDate' onChange={handleInput} />
+          <input type='date' required id='deliveryDate' />
         </div>
         <div className={classes.actions}>
           <button type='submit'>Start Simulation</button>
