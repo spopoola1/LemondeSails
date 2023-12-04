@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Card from '../components/UI/Card';
 import classes from './SimulationDetails.module.css';
 
@@ -31,28 +31,20 @@ function SimulationDetails() {
 }
 
 function ShipmentUpdates() {
-  const [updates, setUpdates] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch('http://localhost:3001/api/simulation/updates');
-        const data = await response.json();
-        setUpdates(data.shipment_updates || []);
-      } catch (error) {
-        console.error('Error fetching shipment updates:', error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
   return (
     <div>
       <ul className={classes.shipmentList}>
-        {updates.map((update, index) => (
-          <li key={index}>{update}</li>
-        ))}
+        <li>Received at Origin Location</li>
+        <li>Loaded on container</li>
+        <li>Loaded on Transport</li>
+        <li>En-route to Next Location</li>
+        <li>Route Delay: 1 hour delay, Heavy Hailstorm</li>
+        <li>Truck is back on route and Continuing to next Location</li>
+        <li>Arrived Next Location</li>
+        <li>Arrived at Destination Location</li>
+        <li>Unloaded from Transport</li>
+        <li>Unloaded from Container</li>
+        <li>Picked up at Destination</li>
       </ul>
     </div>
   );

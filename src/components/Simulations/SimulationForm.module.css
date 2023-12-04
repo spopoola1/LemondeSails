@@ -1,17 +1,22 @@
 .form {
+  min-width: 200px;
   padding: 1rem;
 }
 
+/* adds spacing between each dropdown */
 .control {
   margin-bottom: 0.5rem;
 }
 
+
+/* styling for the dropdown Headers */
 .control label {
   display: block;
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
 
+/* styling for the dropdowns */
 .control input,
 .control textarea {
   display: block;
@@ -22,11 +27,13 @@
   width: 100%;
 }
 
+/* styling for the start simulation button alignment */
 .actions {
   margin-top: 1rem;
   text-align: right;
 }
 
+/* styling for the start simulation button */
 .actions button {
   font: inherit;
   cursor: pointer;
@@ -44,6 +51,7 @@
   border-color: #228ea1;
 }
 
+/* styling for card title header */
 h1 {
   text-align: center;
   color: #228ea1; /* Change the title color */

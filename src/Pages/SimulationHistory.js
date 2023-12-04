@@ -24,6 +24,7 @@ const DUMMY_DATA = [
       },
 ];
 
+//function for displaying data from simulationList.js to the webpage
 function SimulationHistoryPage() {
     return (
       <section>

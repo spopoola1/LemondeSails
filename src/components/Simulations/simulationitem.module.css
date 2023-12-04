@@ -2,21 +2,25 @@
     margin: 1rem 0;
   }
   
+  /* styling for all previous simulation data */
   .content {
     text-align: center;
     padding: 1rem;
   }
   
+  /* styling for previous simulation item title header */
   .content h3 {
     font-size: 1.25rem;
     color: #2c292b;
   }
   
+  /* alignment styling for the view simulation button */
   .actions {
     padding: 1.5rem;
     text-align: center;
   }
   
+  /* styling for the view simulation button */
   .actions button {
     font: inherit;
     cursor: pointer;

@@ -7,7 +7,7 @@ function IntermodalDetailsCard() {
     <Card>
       <div className={classes.content}>
         <h3>Intermodal Mix</h3>
-        <p>Truck, Plane</p>
+        <p></p>
       </div>
       <div className={classes.content}>
         <h3>Transfer Points</h3>

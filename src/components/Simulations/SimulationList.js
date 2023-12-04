@@ -5,6 +5,7 @@ function SimulationList(props) {
     return (
         <ul className={classes.list}>
             {props.simulations.map((simulation) => (
+                //pulls placeholder data from simulationHistory.js to display data in each item
                 <SimulationItem
                     key={simulation.id}
                     id={simulation.id}

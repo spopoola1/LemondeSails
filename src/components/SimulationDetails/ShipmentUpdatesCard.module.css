@@ -18,17 +18,11 @@
   }
   
   .shipmentList {
-    list-style: none; /* Remove bullet points */
-    padding-left: 0; /* Remove left padding */
+    list-style: none; /* Removes bullet points */
+    padding-left: 0; 
   }
   
   .shipmentList li {
     font-size: 0.9rem;
     margin-bottom: 0.25rem;
   }
-  
-  .shipmentList li::before {
-    content: "- "; /* Add a dash before each list item */
-    color: #555; /* Color of the dash */
-  }
-  
