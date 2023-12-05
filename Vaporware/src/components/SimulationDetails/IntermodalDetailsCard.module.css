@@ -1,0 +1,21 @@
+/* IntermodalDetailsCard.module.css */
+
+.card {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 1rem;
+  text-align: left;
+}
+
+.content h3 {
+  font-size: 1.25rem;
+  color: #2c292b;
+}
+
+.content p {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 0.5rem;
+}

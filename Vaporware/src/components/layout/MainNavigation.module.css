@@ -1,0 +1,47 @@
+/* Adds the background image to the Website */
+body {
+  background-image: url('C:\\Users\\konco\\Desktop\\Sails Repo\\lemondesails\\sam-ui-test\\src\\Pages\\sample2.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Handles styling of the header bar */
+.header {
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #228ea1;
+    padding: 0 10%;
+  }
+ 
+/* Handles styling of the header title */
+  .logo {
+    font-size: 2rem;
+    color: white;
+    font-weight: bold;
+    margin-left: -7rem;
+  }
+  
+  /* Handles styling of the header navigation buttons */
+  .header ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: baseline;
+  }
+  
+  /* Handles spacing of the header navigation buttons */
+  .header li {
+    margin-left: 3rem;
+  }
+  
+  /* Handles font of the navigation buttons */
+  .header a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #ffffff;
+  }
+  

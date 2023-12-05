@@ -1,0 +1,37 @@
+.item {
+    margin: 1rem 0;
+  }
+  
+  /* styling for all previous simulation data */
+  .content {
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  /* styling for previous simulation item title header */
+  .content h3 {
+    font-size: 1.25rem;
+    color: #2c292b;
+  }
+  
+  /* alignment styling for the view simulation button */
+  .actions {
+    padding: 1.5rem;
+    text-align: center;
+  }
+  
+  /* styling for the view simulation button */
+  .actions button {
+    font: inherit;
+    cursor: pointer;
+    color: #228ea1;
+    border: 1px solid #228ea1;
+    background-color: transparent;
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+  }
+  
+  .actions button:hover,
+  .actions button:active {
+    background-color: #ffffff;
+  }

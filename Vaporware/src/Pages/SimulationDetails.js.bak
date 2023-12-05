@@ -1,0 +1,67 @@
+import React from 'react';
+import Card from '../components/UI/Card';
+import classes from './SimulationDetails.module.css';
+
+function SimulationDetails() {
+  return (
+    <Card>
+      <div className={classes.cardHeader}>
+        <h2>Shipment Details</h2>
+      </div>
+      <div className={classes.content}>
+        <div className={classes.shipmentInfo}>
+          <ul className={classes.shipmentList}>
+            <li>Origin: ATL Atlanta</li>
+            <li>Destination: CLT Charlotte</li>
+            <li>Class: Express</li>
+            <li>Cost: 693.1</li>
+          </ul>
+        </div>
+        <div className={classes.divider}></div>
+        <div className={classes.shipmentUpdates}>
+          <ShipmentUpdates />
+        </div>
+        <div className={classes.divider}></div>
+        <div className={classes.intermodalDetails}>
+          <IntermodalDetails />
+        </div>
+      </div>
+    </Card>
+  );
+}
+
+function ShipmentUpdates() {
+  return (
+    <div>
+      <ul className={classes.shipmentList}>
+        <li>Received at Origin Location 12/03/2023 07:07 AM</li>
+        <li>Loaded to Container 12/03/2023 08:07 AM</li>
+        <li>Enroute to Next Location 12/03/2023 11:07 AM</li>
+        <li>Event - Godzilla,
+ Response: Rerouting to safety, expected to add approx. 24 hours (Probability: 17.5%)</li>
+        <li>Truck is back on route and Continuing to next Location</li>
+        <li>Arrived Next Location 12/04/2023 11:07 PM</li>
+        <li>Arrived at Destination Location 12/05/2023 11:07 AM</li>
+        <li>Unloaded from Transport 12/05/2023 01:07 PM</li>
+        <li>Unloaded from Container 12/05/2023 03:07 PM</li>
+        <li>Picked up at Destination 12/05/2023 08:07 PM</li>
+      </ul>
+    </div>
+  );
+}
+
+function IntermodalDetails() {
+  return (
+    <div>
+      <h3>Intermodal Details</h3>
+      <ul className={classes.shipmentList}>
+        <li>Intermodal Mix: Truck</li>
+        <li>Transfer Points: 0</li>
+        <li>Travelled Hours: 48</li>
+        <li>Events Affecting Shipment: Godzilla</li>
+      </ul>
+    </div>
+  );
+}
+
+export default SimulationDetails;

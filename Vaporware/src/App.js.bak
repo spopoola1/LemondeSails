@@ -1,0 +1,24 @@
+import React, { useState } from 'react';
+import './App.css';
+import Subpage from './Subpage';
+
+// const API URL = 'Our Restful API url and apikey'
+
+function App() {
+  const [showSubpage, setShowSubpage] = useState(false);
+
+  const toggleSubpage = () => {
+    setShowSubpage(!showSubpage);
+};
+
+return (
+  <div className = "App">
+    <h1>Simulation Details Test</h1>
+    <button onClick = {toggleSubpage}> Show Simulation Details</button>
+
+    {showSubpage && <Subpage />}
+  </div>
+  );
+}
+
+export default App;
