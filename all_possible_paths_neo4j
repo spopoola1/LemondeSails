@@ -1,0 +1,11 @@
+MATCH (start:OriginCode {`Origin Code`: "HYD"})
+MATCH (end:DestinationCode {`Destination Code`: "BOM"})
+CALL apoc.path.expandConfig(start, {
+    relationshipFilter: "ROUTE_TO",
+    minLevel: 1,
+    maxLevel: 3,
+    terminatorNodes: [end]
+})
+YIELD path
+RETURN path, length(path) AS hops
+ORDER BY hops;
