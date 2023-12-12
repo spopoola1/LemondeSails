@@ -1,0 +1,1600 @@
+[11/22 3:54 AM] Srivatsav Busi
+-- Inserting data into Proutes table by pulling TransportationModeID and ClassOfServiceID from respective tables
+ 
+INSERT INTO Proutes (OriginCode, DestinationCode, TransportationModeID, ClassOfServiceID, Cost, HoursTraveled)
+
+SELECT
+
+    'ISS', -- Replace with your OriginCode
+
+    'BWN', -- Replace with your DestinationCode
+
+    TM.TransportationModeID,
+
+    CS.ClassOfServiceID,
+
+    100000, -- Replace with the Cost value
+
+    48 -- Replace with the HoursTraveled value
+
+FROM
+
+    TransportationMode TM
+
+INNER JOIN
+
+    ClassesOfService CS ON TM.Description = 'Dragon' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+
+    'BWN', -- Replace with your OriginCode
+
+    'ISS', -- Replace with your DestinationCode
+
+    TM.TransportationModeID,
+
+    CS.ClassOfServiceID,
+
+    400000, -- Replace with the Cost value
+
+    96 -- Replace with the HoursTraveled value
+
+FROM
+
+    TransportationMode TM
+
+INNER JOIN
+
+    ClassesOfService CS ON TM.Description = 'Falcon' AND CS.Description = 'Premium'
+ 
+
+
+[11/22 3:58 AM] Srivatsav Busi
+UNION ALL
+
+
+SELECT
+
+    'ZAL', -- Replace with your OriginCode
+
+    'SCL', -- Replace with your DestinationCode
+
+    TM.TransportationModeID,
+
+    CS.ClassOfServiceID,
+
+    710, -- Replace with the Cost value
+
+    24 -- Replace with the HoursTraveled value
+
+FROM
+
+    TransportationMode TM
+
+INNER JOIN
+
+    ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+
+    'ZAL', -- Replace with your OriginCode
+
+    'NSP', -- Replace with your DestinationCode
+
+    TM.TransportationModeID,
+
+    CS.ClassOfServiceID,
+
+    3000, -- Replace with the Cost value
+
+    48 -- Replace with the HoursTraveled value
+
+FROM
+
+    TransportationMode TM
+
+INNER JOIN
+
+    ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+
+    'SYD', -- Replace with your OriginCode
+
+    'MEL', -- Replace with your DestinationCode
+
+    TM.TransportationModeID,
+
+    CS.ClassOfServiceID,
+
+    6000, -- Replace with the Cost value
+
+    24 -- Replace with the HoursTraveled value
+
+FROM
+
+    TransportationMode TM
+
+INNER JOIN
+
+    ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+
+    'STL', -- Replace with your OriginCode
+
+    'ORD', -- Replace with your DestinationCode
+
+    TM.TransportationModeID,
+
+    CS.ClassOfServiceID,
+
+    2968.704, -- Replace with the Cost value
+
+    24 -- Replace with the HoursTraveled value
+
+FROM
+
+    TransportationMode TM
+
+INNER JOIN
+
+    ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+
+    'STL', -- Replace with your OriginCode
+
+    'DFW', -- Replace with your DestinationCode
+
+    TM.TransportationModeID,
+
+    CS.ClassOfServiceID,
+
+    3373.056, -- Replace with the Cost value
+
+    24 -- Replace with the HoursTraveled value
+
+FROM
+
+    TransportationMode TM
+
+INNER JOIN
+
+    ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium';
+
+[11/22 4:00 AM] Srivatsav Busi
+UNION ALL
+ 
+INSERT INTO Proutes (OriginCode, DestinationCode, TransportationModeID, ClassOfServiceID, Cost, HoursTraveled)
+
+SELECT
+
+    'SIN', 'LAX', TM.TransportationModeID, CS.ClassOfServiceID, 7000, 24
+
+FROM TransportationMode TM
+
+INNER JOIN ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+
+    'SEA', 'ANC', TM.TransportationModeID, CS.ClassOfServiceID, 4300, 24
+
+FROM TransportationMode TM
+
+INNER JOIN ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+
+    'SEA', 'LAX', TM.TransportationModeID, CS.ClassOfServiceID, 4500, 24
+
+FROM TransportationMode TM
+
+INNER JOIN ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+
+    'SCL', 'ZAL', TM.TransportationModeID, CS.ClassOfServiceID, 710, 24
+
+FROM TransportationMode TM
+
+INNER JOIN ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+
+    'SCL', 'MEX', TM.TransportationModeID, CS.ClassOfServiceID, 2900, 24
+
+FROM TransportationMode TM
+
+INNER JOIN ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium';
+
+[11/22 4:01 AM] Srivatsav Busi
+UNION ALL
+
+
+SELECT
+
+    'SAT', 'MEX', TM.TransportationModeID, CS.ClassOfServiceID, 3100, 24
+
+FROM TransportationMode TM
+
+INNER JOIN ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+
+    'SAT', 'DFW', TM.TransportationModeID, CS.ClassOfServiceID, 3314.304, 24
+
+FROM TransportationMode TM
+
+INNER JOIN ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+
+    'SAN', 'LAX', TM.TransportationModeID, CS.ClassOfServiceID, 3100, 24
+
+FROM TransportationMode TM
+
+INNER JOIN ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+
+    'PNY', 'HYD', TM.TransportationModeID, CS.ClassOfServiceID, 2690, 24
+
+FROM TransportationMode TM
+
+INNER JOIN ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+
+    'ORD', 'STL', TM.TransportationModeID, CS.ClassOfServiceID, 2968.704, 24
+
+FROM TransportationMode TM
+
+INNER JOIN ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+
+    'NSP', 'MEL', TM.TransportationModeID, CS.ClassOfServiceID, 9000, 24
+
+FROM TransportationMode TM
+
+INNER JOIN ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+
+    'NSP', 'ZAL', TM.TransportationModeID, CS.ClassOfServiceID, 3000, 24
+
+FROM TransportationMode TM
+
+INNER JOIN ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+
+    'MSY', 'DFW', TM.TransportationModeID, CS.ClassOfServiceID, 3231.36, 24
+
+FROM TransportationMode TM
+
+INNER JOIN ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+
+    'MEX', 'SCL', TM.TransportationModeID, CS.ClassOfServiceID, 2900, 24
+
+FROM TransportationMode TM
+
+INNER JOIN ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+
+    'MEX', 'DFW', TM.TransportationModeID, CS.ClassOfServiceID, 3000, 24
+
+FROM TransportationMode TM
+
+INNER JOIN ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium';
+
+[11/22 4:03 AM] Srivatsav Busi
+UNION ALL
+
+
+SELECT
+
+    'MEX', 'SAT', TM.TransportationModeID, CS.ClassOfServiceID, 3100, 24
+
+FROM TransportationMode TM
+
+INNER JOIN ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+
+    'MEX', 'IAH', TM.TransportationModeID, CS.ClassOfServiceID, 3100, 24
+
+FROM TransportationMode TM
+
+INNER JOIN ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+
+    'MEX', 'LAX', TM.TransportationModeID, CS.ClassOfServiceID, 6000, 24
+
+FROM TransportationMode TM
+
+INNER JOIN ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+
+    'MEL', 'SYD', TM.TransportationModeID, CS.ClassOfServiceID, 6000, 24
+
+FROM TransportationMode TM
+
+INNER JOIN ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+
+    'MEL', 'NSP', TM.TransportationModeID, CS.ClassOfServiceID, 9000, 24
+
+FROM TransportationMode TM
+
+INNER JOIN ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+
+    'LAX', 'DFW', TM.TransportationModeID, CS.ClassOfServiceID, 5716.224, 24
+
+FROM TransportationMode TM
+
+INNER JOIN ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+
+    'LAX', 'MEX', TM.TransportationModeID, CS.ClassOfServiceID, 6000, 24
+
+FROM TransportationMode TM
+
+INNER JOIN ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+
+    'LAX', 'SIN', TM.TransportationModeID, CS.ClassOfServiceID, 7000, 24
+
+FROM TransportationMode TM
+
+INNER JOIN ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+
+    'LAX', 'SEA', TM.TransportationModeID, CS.ClassOfServiceID, 4500, 24
+
+FROM TransportationMode TM
+
+INNER JOIN ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+
+    'LAX', 'SAN', TM.TransportationModeID, CS.ClassOfServiceID, 3100, 24
+
+FROM TransportationMode TM
+
+INNER JOIN ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium';
+
+[11/22 4:04 AM] Srivatsav Busi
+UNION ALL
+
+
+SELECT
+
+    'LAX', 'CLT', TM.TransportationModeID, CS.ClassOfServiceID, 6000, 24
+
+FROM TransportationMode TM
+
+INNER JOIN ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+
+    'IAH', 'MEX', TM.TransportationModeID, CS.ClassOfServiceID, 3100, 24
+
+FROM TransportationMode TM
+
+INNER JOIN ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+
+    'IAH', 'DFW', TM.TransportationModeID, CS.ClassOfServiceID, 2934.144, 24
+
+FROM TransportationMode TM
+
+INNER JOIN ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+
+    'HYD', 'DEL', TM.TransportationModeID, CS.ClassOfServiceID, 2873, 24
+
+FROM TransportationMode TM
+
+INNER JOIN ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+
+    'HYD', 'CCU', TM.TransportationModeID, CS.ClassOfServiceID, 3156, 24
+
+FROM TransportationMode TM
+
+INNER JOIN ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+
+    'HYD', 'PNY', TM.TransportationModeID, CS.ClassOfServiceID, 2690, 24
+
+FROM TransportationMode TM
+
+INNER JOIN ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+
+    'HYD', 'BOM', TM.TransportationModeID, CS.ClassOfServiceID, 2900, 24
+
+FROM TransportationMode TM
+
+INNER JOIN ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+
+    'DFW', 'MEX', TM.TransportationModeID, CS.ClassOfServiceID, 3000, 24
+
+FROM TransportationMode TM
+
+INNER JOIN ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+
+    'DFW', 'CLT', TM.TransportationModeID, CS.ClassOfServiceID, 4492.8, 24
+
+FROM TransportationMode TM
+
+INNER JOIN ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+
+    'DFW', 'LAX', TM.TransportationModeID, CS.ClassOfServiceID, 5716.224, 24
+
+FROM TransportationMode TM
+
+INNER JOIN ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium';
+
+[11/22 4:07 AM] Srivatsav Busi
+UNION ALL
+
+
+SELECT
+
+    'DFW', 'STL', TM.TransportationModeID, CS.ClassOfServiceID, 3373.056, 24
+
+FROM TransportationMode TM
+
+INNER JOIN ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+
+    'DFW', 'MSY', TM.TransportationModeID, CS.ClassOfServiceID, 3231.36, 24
+
+FROM TransportationMode TM
+
+INNER JOIN ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+
+    'DFW', 'SAT', TM.TransportationModeID, CS.ClassOfServiceID, 3314.304, 24
+
+FROM TransportationMode TM
+
+INNER JOIN ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+
+    'DFW', 'IAH', TM.TransportationModeID, CS.ClassOfServiceID, 2934.144, 24
+
+FROM TransportationMode TM
+
+INNER JOIN ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+
+    'DEL', 'HYD', TM.TransportationModeID, CS.ClassOfServiceID, 2873, 24
+
+FROM TransportationMode TM
+
+INNER JOIN ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+
+    'CLT', 'DFW', TM.TransportationModeID, CS.ClassOfServiceID, 4492.8, 24
+
+FROM TransportationMode TM
+
+INNER JOIN ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+
+    'CLT', 'LAX', TM.TransportationModeID, CS.ClassOfServiceID, 6000, 24
+
+FROM TransportationMode TM
+
+INNER JOIN ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+
+    'CLT', 'ATL', TM.TransportationModeID, CS.ClassOfServiceID, 1178.27, 24
+
+FROM TransportationMode TM
+
+INNER JOIN ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+
+    'CLT', 'CHS', TM.TransportationModeID, CS.ClassOfServiceID, 986, 24
+
+FROM TransportationMode TM
+
+INNER JOIN ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+
+    'CHS', 'CLT', TM.TransportationModeID, CS.ClassOfServiceID, 986, 24
+
+FROM TransportationMode TM
+
+INNER JOIN ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium';
+
+UNION ALL
+
+SELECT
+    'CCU', 'HYD', TM.TransportationModeID, CS.ClassOfServiceID, 3156, 24
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+    'BOM', 'HYD', TM.TransportationModeID, CS.ClassOfServiceID, 2900, 24
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+    'ATL', 'CLT', TM.TransportationModeID, CS.ClassOfServiceID, 1178.27, 24
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+    'ANC', 'SEA', TM.TransportationModeID, CS.ClassOfServiceID, 4300, 24
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Plane' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+    'ZAL', 'SCL', TM.TransportationModeID, CS.ClassOfServiceID, 630, 48
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Ship' AND CS.Description = 'Express'
+ 
+UNION ALL
+ 
+SELECT
+    'ZAL', 'NSP', TM.TransportationModeID, CS.ClassOfServiceID, 1600, 72
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Ship' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'SYD', 'BOM', TM.TransportationModeID, CS.ClassOfServiceID, 2578, 360
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Ship' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'SYD', 'PNY', TM.TransportationModeID, CS.ClassOfServiceID, 1743, 96
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Ship' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'SYD', 'MEL', TM.TransportationModeID, CS.ClassOfServiceID, 5190, 48
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Ship' AND CS.Description = 'Express'
+ 
+UNION ALL
+ 
+SELECT
+    'SYD', 'SIN', TM.TransportationModeID, CS.ClassOfServiceID, 3690, 48
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Ship' AND CS.Description = 'Standard';
+
+UNION ALL SELECT     'SYD', 'SIN', TM.T... by Srivatsav Busi
+Srivatsav Busi
+11/22 4:17 AM
+UNION ALL
+SELECT
+    'SYD', 'SIN', TM.TransportationModeID, CS.ClassOfServiceID, 5700, 24
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Ship' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+    'SIN', 'BOM', TM.TransportationModeID, CS.ClassOfServiceID, 3300, 216
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Ship' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'SIN', 'PNY', TM.TransportationModeID, CS.ClassOfServiceID, 1864, 72
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Ship' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'SIN', 'CCU', TM.TransportationModeID, CS.ClassOfServiceID, 4789, 96
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Ship' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'SIN', 'KUL', TM.TransportationModeID, CS.ClassOfServiceID, 3789, 48
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Ship' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'SIN', 'SYD', TM.TransportationModeID, CS.ClassOfServiceID, 3690, 48
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Ship' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'SIN', 'MEL', TM.TransportationModeID, CS.ClassOfServiceID, 3780, 72
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Ship' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'SIN', 'KUL', TM.TransportationModeID, CS.ClassOfServiceID, 7500, 24
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Ship' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+    'SIN', 'SYD', TM.TransportationModeID, CS.ClassOfServiceID, 5700, 24
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Ship' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+    'SIN', 'MEL', TM.TransportationModeID, CS.ClassOfServiceID, 5900, 24
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Ship' AND CS.Description = 'Premium';
+
+UNION ALL SELECT     'SIN', 'LAX', TM.T... by Srivatsav Busi
+Srivatsav Busi
+11/22 4:19 AM
+UNION ALL
+
+SELECT
+    'SIN', 'LAX', TM.TransportationModeID, CS.ClassOfServiceID, 3478, 744
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Ship' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'SCL', 'ZAL', TM.TransportationModeID, CS.ClassOfServiceID, 630, 48
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Ship' AND CS.Description = 'Express'
+ 
+UNION ALL
+ 
+SELECT
+    'PNY', 'SYD', TM.TransportationModeID, CS.ClassOfServiceID, 1743, 96
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Ship' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'PNY', 'KUL', TM.TransportationModeID, CS.ClassOfServiceID, 1800, 72
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Ship' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'PNY', 'SIN', TM.TransportationModeID, CS.ClassOfServiceID, 1864, 72
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Ship' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'NSP', 'MEL', TM.TransportationModeID, CS.ClassOfServiceID, 3000, 72
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Ship' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'NSP', 'ZAL', TM.TransportationModeID, CS.ClassOfServiceID, 1600, 72
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Ship' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'MEL', 'SIN', TM.TransportationModeID, CS.ClassOfServiceID, 3780, 72
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Ship' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'MEL', 'SYD', TM.TransportationModeID, CS.ClassOfServiceID, 5190, 48
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Ship' AND CS.Description = 'Express'
+ 
+UNION ALL
+ 
+SELECT
+    'MEL', 'SIN', TM.TransportationModeID, CS.ClassOfServiceID, 5900, 24
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Ship' AND CS.Description = 'Premium';
+
+UNION ALL SELECT     'MEL', 'NSP', TM.T... by Srivatsav Busi
+Srivatsav Busi
+11/22 4:20 AM
+UNION ALL
+SELECT
+    'MEL', 'NSP', TM.TransportationModeID, CS.ClassOfServiceID, 3000, 72
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Ship' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'LAX', 'SIN', TM.TransportationModeID, CS.ClassOfServiceID, 3478, 744
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Ship' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'KUL', 'BOM', TM.TransportationModeID, CS.ClassOfServiceID, 3150, 408
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Ship' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'KUL', 'PNY', TM.TransportationModeID, CS.ClassOfServiceID, 1800, 72
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Ship' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'KUL', 'CCU', TM.TransportationModeID, CS.ClassOfServiceID, 4790, 120
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Ship' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'KUL', 'SIN', TM.TransportationModeID, CS.ClassOfServiceID, 3789, 48
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Ship' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'KUL', 'SIN', TM.TransportationModeID, CS.ClassOfServiceID, 7500, 24
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Ship' AND CS.Description = 'Premium'
+ 
+UNION ALL
+ 
+SELECT
+    'IAH', 'BOM', TM.TransportationModeID, CS.ClassOfServiceID, 2469, 1152
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Ship' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'EDI', 'BOM', TM.TransportationModeID, CS.ClassOfServiceID, 1899, 840
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Ship' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'EDI', 'CHS', TM.TransportationModeID, CS.ClassOfServiceID, 2300, 456
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Ship' AND CS.Description = 'Standard';
+
+UNION ALL SELECT     'CHS', 'BOM', TM.T... by Srivatsav Busi
+Srivatsav Busi
+11/22 4:23 AM
+UNION ALL
+
+SELECT
+    'CHS', 'BOM', TM.TransportationModeID, CS.ClassOfServiceID, 2380, 912
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Ship' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'CHS', 'EDI', TM.TransportationModeID, CS.ClassOfServiceID, 2300, 456
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Ship' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'CHS', 'ABZ', TM.TransportationModeID, CS.ClassOfServiceID, 1899, 384
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Ship' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'CCU', 'SIN', TM.TransportationModeID, CS.ClassOfServiceID, 4789, 96
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Ship' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'CCU', 'KUL', TM.TransportationModeID, CS.ClassOfServiceID, 4790, 120
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Ship' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'BOM', 'EDI', TM.TransportationModeID, CS.ClassOfServiceID, 1899, 840
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Ship' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'BOM', 'IAH', TM.TransportationModeID, CS.ClassOfServiceID, 2469, 1152
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Ship' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'BOM', 'CHS', TM.TransportationModeID, CS.ClassOfServiceID, 2380, 912
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Ship' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'BOM', 'SYD', TM.TransportationModeID, CS.ClassOfServiceID, 2578, 360
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Ship' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'BOM', 'KUL', TM.TransportationModeID, CS.ClassOfServiceID, 3150, 408
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Ship' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'BOM', 'SIN', TM.TransportationModeID, CS.ClassOfServiceID, 3300, 216
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Ship' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'ABZ', 'CHS', TM.TransportationModeID, CS.ClassOfServiceID, 1899, 384
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Ship' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'STL', 'ORD', TM.TransportationModeID, CS.ClassOfServiceID, 859, 48
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Train' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'STL', 'DFW', TM.TransportationModeID, CS.ClassOfServiceID, 976, 48
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Train' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'SEA', 'ANC', TM.TransportationModeID, CS.ClassOfServiceID, 1100, 72
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Train' AND CS.Description = 'Standard';
+
+UNION ALL SELECT     'SEA', 'LAX', TM.T... by Srivatsav Busi
+Srivatsav Busi
+11/22 4:24 AM
+UNION ALL
+
+SELECT
+    'SEA', 'LAX', TM.TransportationModeID, CS.ClassOfServiceID, 960, 72
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Train' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'SAT', 'BWN', TM.TransportationModeID, CS.ClassOfServiceID, 2350, 24
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Train' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'SAT', 'DFW', TM.TransportationModeID, CS.ClassOfServiceID, 959, 48
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Train' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'SAN', 'LAX', TM.TransportationModeID, CS.ClassOfServiceID, 768, 24
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Train' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'PNY', 'HYD', TM.TransportationModeID, CS.ClassOfServiceID, 1600, 48
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Train' AND CS.Description = 'Express'
+ 
+UNION ALL
+ 
+SELECT
+    'ORD', 'STL', TM.TransportationModeID, CS.ClassOfServiceID, 859, 48
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Train' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'MSY', 'DFW', TM.TransportationModeID, CS.ClassOfServiceID, 935, 48
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Train' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'MEX', 'DFW', TM.TransportationModeID, CS.ClassOfServiceID, 875, 48
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Train' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'LAX', 'DFW', TM.TransportationModeID, CS.ClassOfServiceID, 1654, 96
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Train' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'LAX', 'SEA', TM.TransportationModeID, CS.ClassOfServiceID, 960, 72
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Train' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'LAX', 'SAN', TM.TransportationModeID, CS.ClassOfServiceID, 768, 24
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Train' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'IAH', 'DFW', TM.TransportationModeID, CS.ClassOfServiceID, 849, 48
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Train' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'HYD', 'DEL', TM.TransportationModeID, CS.ClassOfServiceID, 1490, 48
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Train' AND CS.Description = 'Express'
+ 
+UNION ALL
+ 
+SELECT
+    'HYD', 'CCU', TM.TransportationModeID, CS.ClassOfServiceID, 1325, 96
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Train' AND CS.Description = 'Express'
+ 
+UNION ALL
+ 
+SELECT
+    'HYD', 'PNY', TM.TransportationModeID, CS.ClassOfServiceID, 1600, 24
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Train' AND CS.Description = 'Express';
+
+UNION ALL SELECT     'HYD', 'BOM', TM.T... by Srivatsav Busi
+Srivatsav Busi
+11/22 4:26 AM
+UNION ALL
+
+SELECT
+    'HYD', 'BOM', TM.TransportationModeID, CS.ClassOfServiceID, 1290, 24
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Train' AND CS.Description = 'Express'
+ 
+UNION ALL
+ 
+SELECT
+    'DFW', 'MEX', TM.TransportationModeID, CS.ClassOfServiceID, 875, 72
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Train' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'DFW', 'CLT', TM.TransportationModeID, CS.ClassOfServiceID, 1300, 96
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Train' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'DFW', 'LAX', TM.TransportationModeID, CS.ClassOfServiceID, 1654, 120
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Train' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'DFW', 'STL', TM.TransportationModeID, CS.ClassOfServiceID, 976, 48
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Train' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'DFW', 'MSY', TM.TransportationModeID, CS.ClassOfServiceID, 935, 48
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Train' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'DFW', 'SAT', TM.TransportationModeID, CS.ClassOfServiceID, 959, 48
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Train' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'DFW', 'IAH', TM.TransportationModeID, CS.ClassOfServiceID, 849, 48
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Train' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'DEL', 'HYD', TM.TransportationModeID, CS.ClassOfServiceID, 1490, 48
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Train' AND CS.Description = 'Express'
+ 
+UNION ALL
+ 
+SELECT
+    'CLT', 'DFW', TM.TransportationModeID, CS.ClassOfServiceID, 1300, 72
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Train' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'CLT', 'ATL', TM.TransportationModeID, CS.ClassOfServiceID, 478, 48
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Train' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'CLT', 'CHS', TM.TransportationModeID, CS.ClassOfServiceID, 400, 48
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Train' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'CHS', 'CLT', TM.TransportationModeID, CS.ClassOfServiceID, 400, 48
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Train' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'CCU', 'HYD', TM.TransportationModeID, CS.ClassOfServiceID, 1325, 72
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Train' AND CS.Description = 'Express'
+ 
+UNION ALL
+ 
+SELECT
+    'BWN', 'SAT', TM.TransportationModeID, CS.ClassOfServiceID, 2350, 24
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Train' AND CS.Description = 'Standard';
+
+UNION ALL SELECT     'BOM', 'HYD', TM.T... by Srivatsav Busi
+Srivatsav Busi
+11/22 4:28 AM
+UNION ALL
+
+SELECT
+    'BOM', 'HYD', TM.TransportationModeID, CS.ClassOfServiceID, 1290, 48
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Train' AND CS.Description = 'Express'
+ 
+UNION ALL
+ 
+SELECT
+    'ATL', 'CLT', TM.TransportationModeID, CS.ClassOfServiceID, 478, 48
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Train' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'ANC', 'SEA', TM.TransportationModeID, CS.ClassOfServiceID, 1100, 72
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Train' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'ZAL', 'SCL', TM.TransportationModeID, CS.ClassOfServiceID, 550, 72
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Truck' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'SYD', 'MEL', TM.TransportationModeID, CS.ClassOfServiceID, 2698, 72
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Truck' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'STL', 'ORD', TM.TransportationModeID, CS.ClassOfServiceID, 1159.65, 48
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Truck' AND CS.Description = 'Express'
+ 
+UNION ALL
+ 
+SELECT
+    'STL', 'DFW', TM.TransportationModeID, CS.ClassOfServiceID, 1317.6, 48
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Truck' AND CS.Description = 'Express'
+ 
+UNION ALL
+ 
+SELECT
+    'SHL', 'DEL', TM.TransportationModeID, CS.ClassOfServiceID, 500, 48
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Truck' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'SEA', 'ANC', TM.TransportationModeID, CS.ClassOfServiceID, 1800, 48
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Truck' AND CS.Description = 'Express'
+ 
+UNION ALL
+ 
+SELECT
+    'SEA', 'LAX', TM.TransportationModeID, CS.ClassOfServiceID, 1500, 48
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Truck' AND CS.Description = 'Express'
+ 
+UNION ALL
+ 
+SELECT
+    'SCL', 'ZAL', TM.TransportationModeID, CS.ClassOfServiceID, 550, 72
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Truck' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'SCL', 'MEX', TM.TransportationModeID, CS.ClassOfServiceID, 1800, 240
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Truck' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'SAT', 'BWN', TM.TransportationModeID, CS.ClassOfServiceID, 4525, 24
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Truck' AND CS.Description = 'Express'
+ 
+UNION ALL
+ 
+SELECT
+    'SAT', 'MEX', TM.TransportationModeID, CS.ClassOfServiceID, 1400, 48
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Truck' AND CS.Description = 'Express'
+ 
+UNION ALL
+ 
+SELECT
+    'SAT', 'DFW', TM.TransportationModeID, CS.ClassOfServiceID, 1294.65, 24
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Truck' AND CS.Description = 'Express';
+
+UNION ALL SELECT     'SAN', 'LAX', TM.T... by Srivatsav Busi
+Srivatsav Busi
+11/22 4:30 AM
+UNION ALL
+
+SELECT
+    'SAN', 'LAX', TM.TransportationModeID, CS.ClassOfServiceID, 1167, 24
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Truck' AND CS.Description = 'Express'
+ 
+UNION ALL
+ 
+SELECT
+    'PNY', 'HYD', TM.TransportationModeID, CS.ClassOfServiceID, 765, 48
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Truck' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'ORD', 'STL', TM.TransportationModeID, CS.ClassOfServiceID, 1159.65, 48
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Truck' AND CS.Description = 'Express'
+ 
+UNION ALL
+ 
+SELECT
+    'MSY', 'DFW', TM.TransportationModeID, CS.ClassOfServiceID, 1262.25, 24
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Truck' AND CS.Description = 'Express'
+ 
+UNION ALL
+ 
+SELECT
+    'MEX', 'SCL', TM.TransportationModeID, CS.ClassOfServiceID, 1800, 240
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Truck' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'MEX', 'SAT', TM.TransportationModeID, CS.ClassOfServiceID, 1400, 48
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Truck' AND CS.Description = 'Express'
+ 
+UNION ALL
+ 
+SELECT
+    'MEX', 'IAH', TM.TransportationModeID, CS.ClassOfServiceID, 1400, 48
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Truck' AND CS.Description = 'Express'
+ 
+UNION ALL
+ 
+SELECT
+    'MEL', 'SYD', TM.TransportationModeID, CS.ClassOfServiceID, 2698, 72
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Truck' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'LAX', 'DFW', TM.TransportationModeID, CS.ClassOfServiceID, 2232.9, 48
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Truck' AND CS.Description = 'Express'
+ 
+UNION ALL
+ 
+SELECT
+    'LAX', 'SEA', TM.TransportationModeID, CS.ClassOfServiceID, 1500, 48
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Truck' AND CS.Description = 'Express'
+ 
+UNION ALL
+ 
+SELECT
+    'LAX', 'SAN', TM.TransportationModeID, CS.ClassOfServiceID, 1167, 24
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Truck' AND CS.Description = 'Express'
+ 
+UNION ALL
+ 
+SELECT
+    'IAH', 'MEX', TM.TransportationModeID, CS.ClassOfServiceID, 1400, 48
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Truck' AND CS.Description = 'Express'
+ 
+UNION ALL
+ 
+SELECT
+    'IAH', 'DFW', TM.TransportationModeID, CS.ClassOfServiceID, 1146.15, 24
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Truck' AND CS.Description = 'Express'
+ 
+UNION ALL
+ 
+SELECT
+    'HYD', 'DEL', TM.TransportationModeID, CS.ClassOfServiceID, 890, 72
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Truck' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'HYD', 'CCU', TM.TransportationModeID, CS.ClassOfServiceID, 1200, 192
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Truck' AND CS.Description = 'Standard';
+
+UNION ALL SELECT     'HYD', 'PNY', TM.T... by Srivatsav Busi
+Srivatsav Busi
+11/22 4:32 AM
+UNION ALL
+
+SELECT
+    'HYD', 'PNY', TM.TransportationModeID, CS.ClassOfServiceID, 765, 48
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Truck' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'HYD', 'BOM', TM.TransportationModeID, CS.ClassOfServiceID, 800, 72
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Truck' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'DFW', 'CLT', TM.TransportationModeID, CS.ClassOfServiceID, 1755, 48
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Truck' AND CS.Description = 'Express'
+ 
+UNION ALL
+ 
+SELECT
+    'DFW', 'LAX', TM.TransportationModeID, CS.ClassOfServiceID, 2232.9, 48
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Truck' AND CS.Description = 'Express'
+ 
+UNION ALL
+ 
+SELECT
+    'DFW', 'STL', TM.TransportationModeID, CS.ClassOfServiceID, 1317.6, 48
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Truck' AND CS.Description = 'Express'
+ 
+UNION ALL
+ 
+SELECT
+    'DFW', 'MSY', TM.TransportationModeID, CS.ClassOfServiceID, 1262.25, 24
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Truck' AND CS.Description = 'Express'
+ 
+UNION ALL
+ 
+SELECT
+    'DFW', 'SAT', TM.TransportationModeID, CS.ClassOfServiceID, 1294.65, 24
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Truck' AND CS.Description = 'Express'
+ 
+UNION ALL
+ 
+SELECT
+    'DFW', 'IAH', TM.TransportationModeID, CS.ClassOfServiceID, 1146.15, 24
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Truck' AND CS.Description = 'Express'
+ 
+UNION ALL
+ 
+SELECT
+    'DEL', 'SHL', TM.TransportationModeID, CS.ClassOfServiceID, 500, 48
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Truck' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'DEL', 'HYD', TM.TransportationModeID, CS.ClassOfServiceID, 890, 72
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Truck' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'CLT', 'DFW', TM.TransportationModeID, CS.ClassOfServiceID, 1755, 48
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Truck' AND CS.Description = 'Express'
+ 
+UNION ALL
+ 
+SELECT
+    'CLT', 'ATL', TM.TransportationModeID, CS.ClassOfServiceID, 693.1, 24
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Truck' AND CS.Description = 'Express'
+ 
+UNION ALL
+ 
+SELECT
+    'CLT', 'CHS', TM.TransportationModeID, CS.ClassOfServiceID, 580, 24
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Truck' AND CS.Description = 'Express'
+ 
+UNION ALL
+ 
+SELECT
+    'CHS', 'CLT', TM.TransportationModeID, CS.ClassOfServiceID, 580, 24
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Truck' AND CS.Description = 'Express'
+ 
+UNION ALL
+ 
+SELECT
+    'CCU', 'HYD', TM.TransportationModeID, CS.ClassOfServiceID, 1200, 192
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Truck' AND CS.Description = 'Standard';
+
+UNION ALL SELECT     'BWN', 'SAT', TM.T... by Srivatsav Busi
+Srivatsav Busi
+11/22 4:33 AM
+UNION ALL
+SELECT
+    'BWN', 'SAT', TM.TransportationModeID, CS.ClassOfServiceID, 4525, 24
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Truck' AND CS.Description = 'Express'
+ 
+UNION ALL
+ 
+SELECT
+    'BOM', 'HYD', TM.TransportationModeID, CS.ClassOfServiceID, 800, 72
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Truck' AND CS.Description = 'Standard'
+ 
+UNION ALL
+ 
+SELECT
+    'ATL', 'CLT', TM.TransportationModeID, CS.ClassOfServiceID, 693.1, 24
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Truck' AND CS.Description = 'Express'
+ 
+UNION ALL
+ 
+SELECT
+    'ANC', 'SEA', TM.TransportationModeID, CS.ClassOfServiceID, 1800, 48
+FROM TransportationMode TM
+INNER JOIN ClassesOfService CS ON TM.Description = 'Truck' AND CS.Description = 'Express';
