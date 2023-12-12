@@ -1,0 +1,109 @@
+-- Creating the ClassesOfService table
+CREATE TABLE ClassesOfService (
+  ClassOfServiceID INT IDENTITY(1,1) PRIMARY KEY,
+  Description VARCHAR(255)
+);
+-- Inserting data into ClassesOfService table
+INSERT INTO ClassesOfService (Description) VALUES
+('Standard'),
+('Express'),
+('Premium');
+ 
+ 
+CREATE TABLE LifeCycleEvents (
+ 
+  LifeCycleID INT IDENTITY(1,1) PRIMARY KEY,
+ 
+  Description VARCHAR(255)
+ 
+);
+-- Inserting data into LifeCycleEvents table
+ 
+INSERT INTO LifeCycleEvents (Description) VALUES
+ 
+('Received at Origin Location'),
+ 
+('Loaded to Container'),
+ 
+('Loaded on Transport'),
+ 
+('En-route to Next Location'),
+ 
+('Arrived Next Location'),
+ 
+('Arrived at Destination Location'),
+ 
+('Unloaded from Transport'),
+ 
+('Unloaded from Container'),
+ 
+('Picked up at Destination');
+ 
+ 
+-- Creating the TransportationMode table
+CREATE TABLE TransportationMode (
+  TransportationModeID INT IDENTITY(1,1) PRIMARY KEY,
+  Description VARCHAR(255)
+);
+-- Inserting data into TransportationMode table
+INSERT INTO TransportationMode (Description) VALUES
+('Ship'),
+('Plane'),
+('Truck'),
+('Falcon'),
+('Dragon');
+ 
+ 
+CREATE TABLE Locations (
+  LocationCode VARCHAR(10) PRIMARY KEY,
+  LocationName VARCHAR(255),
+  City VARCHAR(255),
+  State VARCHAR(50),
+  Country VARCHAR(50)
+);
+ 
+ 
+ 
+-- Inserting data into Location table
+INSERT INTO Locations(LocationCode, LocationName, City, State, Country) VALUES
+('BWN', 'SpaceX Launch City', 'Brownsville', 'TX', 'USA'),
+('ISS', 'International Space Station', 'Near Orbit', 'Earth', 'All'),
+('BOM', 'Mumbai', 'Mumbai', 'Maharashtra', 'India'),
+('HYD', 'Hyderabad', 'Hyderabad', 'Telangana', 'India'),
+('DEL', 'Delhi', 'Delhi', 'NCR', 'India'),
+('CCU', 'Kolkata', 'Kolkata', 'West Bengal', 'India'),
+('PNY', 'Pondicherry', 'Pondicherry', 'Puducherry', 'India'),
+('SHL', 'Shimla', 'Shimla', 'Himachal Pradesh', 'India'),
+('SIN', 'Singapore', 'Singapore', 'Singapore', 'Singapore'),
+('KUL', 'Kuala Lumpur', 'Kuala Lumpur', 'Selangor', 'Malaysia'),
+('SYD', 'Sydney', 'Sydney', 'New South Wales', 'Australia'),
+('MEL', 'Melbourne', 'Melbourne', 'Victoria', 'Australia'),
+('NSP', 'McMurdo Station', 'South Pole Station', 'Antarctica', 'Antarctica'),
+('CLT', 'Charlotte', 'Charlotte', 'NC', 'USA'),
+('ATL', 'Atlanta', 'Atlanta', 'GA', 'USA'),
+('STL', 'St Louis', 'St Louis', 'MO', 'USA'),
+('LAX', 'Los Angeles', 'Los Angeles', 'CA', 'USA'),
+('SAN', 'San Diego', 'San Diego', 'CA', 'USA'),
+('ORD', 'Chicago', 'Chicago', 'IL', 'USA'),
+('MSY', 'New Orleans', 'New Orleans', 'LA', 'USA'),
+('SEA', 'Seattle', 'Seattle', 'WA', 'USA'),
+('ANC', 'Anchorage', 'Anchorage', 'AK', 'USA'),
+('ZAL', 'Valdivia', 'Valdivia', 'Chile', 'Chile'),
+('SCL', 'Santiago', 'Santiago', 'Chile', 'Chile'),
+('MEX', 'Mexico City', 'Mexico City', 'Venustiano Carranza', 'Mexico'),
+('ABZ', 'Aberdeen', 'Aberdeen', 'Scotland', 'Scotland'),
+('EDI', 'Edinburgh', 'Edinburgh', 'Scotland', 'Scotland'),
+('DFW', 'Dallas', 'Dallas', 'TX', 'USA'),
+('SAT', 'San Antonio', 'San Antonio', 'TX', 'USA'),
+('IAH', 'Houston', 'Houston', 'TX', 'USA'),
+('CHS', 'Charleston', 'Charleston', 'SC', 'USA');
+ 
+ 
+CREATE TABLE [Events] (
+  [EventID] INT IDENTITY(1,1) PRIMARY KEY,
+  [EventDescription] VARCHAR(255),
+  [OccurrenceWeight] INT,
+  [LocationCode] VARCHAR(10),
+  [TransportMode] VARCHAR(15),
+  FOREIGN KEY ([LocationCode]) REFERENCES [Locations]([LocationCode])
+);
